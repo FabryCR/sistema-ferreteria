@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <body>        
+        <ui:composition template="#{loginController.selectedTemplatePrincipal}">
+            <ui:define name="content">
+                <h1 style="text-align:center;font:70px Impact;color:#0565a6;"><b>Ferretería EL TORNILLO</b></h1>
+                <br></br>
+                <h2>¡Bienvenido al sistema, <b>${loginController.nombreUsuario.toUpperCase()}!</b></h2>
+                <br></br>
+                <h3>Has iniciado sesión con los permisos de <b>${loginController.idRol}</b></h3>
+            </ui:define> 
+        </ui:composition>
+    </body>
+</html>

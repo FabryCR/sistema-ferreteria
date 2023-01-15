@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="css/default.css"/>
+        <h:outputStylesheet name="css/cssLayout.css"/>
+        <title>Ferretería ADMIN</title>
+    </h:head>
+    <h:body>
+        <div class="fondo">
+            <div id="top" class="top">
+                <ui:insert name="top">                
+                    <b:navBar class="nav" inverse="true" fluid="true" >
+                        <b:navbarLinks pull="left">
+                            <a href="#{request.contextPath}/faces/principal.xhtml"><b:image library="img" name="bolt.png" style-class="img1"/> </a>
+                        </b:navbarLinks>
+                        <b:navbarLinks>
+                            <b:dropMenu value="Inventario" icon-awesome="fas fa-wrench">
+                                <b:navLink value="Inventario" href="#{request.contextPath}/faces/productos/listProductos.xhtml"/>
+                                <b:navLink value="Agregar Inventario" href="#{request.contextPath}/faces/productos/addProducto.xhtml"/>
+                            </b:dropMenu>
+                            <b:navLink value="Facturas" icon-awesome="fas fa-receipt" href="#{request.contextPath}/faces/facturas/listFacturas.xhtml"/>
+                            <b:dropMenu value="Clientes" icon-awesome="fas fa-user-tag" >
+                                <b:navLink value="Lista" href=" #{request.contextPath}/faces/clientes/listCliente.xhtml"/>
+                                <b:navLink value="Añadir Nueva Entrada" href="#{request.contextPath}/faces/clientes/addCliente.xhtml"/>
+                                <b:navLink value="Buscar Clientes" href="#{request.contextPath}/faces/clientes/buscarCliente.xhtml"/>
+                            </b:dropMenu>
+                            <b:navLink value="Comisión" icon-awesome="fas fa-percentage" href="#{request.contextPath}/faces/comision/listCom.xhtml"/>
+                            <b:navLink value="Importaciones" icon-awesome="fas fa-people-carry" href="#{request.contextPath}/faces/importaciones/listImportacion.xhtml"/>
+                            <b:navLink value="Proforma" icon-awesome="fas fa-file-invoice-dollar" href="#{request.contextPath}/faces/proforma/listProforma.xhtml"/>
+                            <b:navLink value="Proveedores" icon-awesome="fas fa-parachute-box" href="#{request.contextPath}/faces/proveedores/listProv.xhtml"/>
+                            <b:navLink value="Transporte" icon-awesome="fas fa-shuttle-van" href="#{request.contextPath}/faces/transporte/listTrans.xhtml"/>
+                            <b:dropMenu value="Reportes" icon-awesome="fas fa-file-chart-line" >
+                                <b:navLink value="Clientes" href="#{request.contextPath}/faces/reportes/reporte.xhtml"/>
+                                <b:navLink value="Facturas" href="#{request.contextPath}/faces/reportes/reporteFactura.xhtml"/>
+                            </b:dropMenu>
+                            <b:navLink value="Respaldos" icon-awesome="fas fa-save" href="#{request.contextPath}/faces/respaldos/respaldo.xhtml"/>
+                            <b:navLink value="Administrar Usuarios" icon-awesome="fa-users" href="#{request.contextPath}/faces/usuarios/usuarios.xhtml"/>
+                        </b:navbarLinks>
+                        <b:navbarLinks pull="right" style-class="hidden-xs">
+                            <b:dropMenu value="${loginController.nombreUsuario.toUpperCase()} (ADMIN)" icon-awesome="fa-user-circle">
+                                <b:navLink value="Salir" icon-awesome="fa-sign-out" href="#{request.contextPath}/faces/index.xhtml"/>
+                            </b:dropMenu>
+                        </b:navbarLinks>
+                    </b:navBar> 
+                </ui:insert> 
+            </div>
+
+            <div id="content" class="center_content">
+                <ui:insert name="content">CONTENIDO</ui:insert>
+            </div>
+        </div>
+    </h:body>
+</html>
